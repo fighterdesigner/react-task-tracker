@@ -37,7 +37,7 @@ const toggleReminder = async (id) => {
   const taskToToggle = await fetchTask(id)
   const updateTask = {...taskToToggle, reminder: !taskToToggle.reminder}
 
-  const res = await fetch(`http://localhost:5000/tasks/${id}`, {
+  await fetch(`http://localhost:5000/tasks/${id}`, {
     method: "PUT",
     headers: {
       "content-type":"application/json"
